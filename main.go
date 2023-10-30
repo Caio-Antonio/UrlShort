@@ -19,6 +19,6 @@ func main (){
 		"/urlshort-godoc": "https://godoc.org/github.com/gophercises/urlshort",
 		"/yaml-godoc":     "https://godoc.org/gopkg.in/yaml.v2",
 	}
-	mapHandler := urlshort.MapHandler(pathsToUrls, mux)
-
+	mapHandler := handlers.MapHandler(pathsToUrls, mux)
+	http.ListenAndServe(":8080", mapHandler)
 }
